@@ -1,0 +1,10 @@
+*
+!.gitignore
+!.zshrc
+!.bashrc
+!.config
+!nvim
+!*.lua
+!lua
+!masonf
+!lazy

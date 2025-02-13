@@ -6,9 +6,9 @@
 !nvim
 !*.lua
 !*.sh
-!tmux-sessionizer
 !lua
 !masonf
 !lazy
 !.local
 !scripts
+!tmux-sessionizer

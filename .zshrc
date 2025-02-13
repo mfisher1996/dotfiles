@@ -113,4 +113,5 @@ export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 
-alias jump=". ~/bin/jump.sh"
+alias jump=". ~/.local/scripts/jump.sh"
+alias sesh=". ~/.local/scripts/tmux-sessionizer"

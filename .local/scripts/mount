@@ -1,0 +1,18 @@
+#!/bin/bash 
+
+read -p "Enter password to connect to remote servers: " pswrd
+
+mount_smbfs "//adm_masonf:$pswrd@10.9.2.49/c$" ~/.mnt/prd/
+mount_smbfs "//adm_masonf:$pswrd@10.9.2.47/c$" ~/.mnt/tst/
+mount_smbfs "//adm_masonf:$pswrd@10.9.3.21/c$" ~/.mnt/iis/
+mount_smbfs "//adm_masonf:$pswrd@10.9.4.60/c$" ~/.mnt/syn/
+mount_smbfs "//adm_masonf:$pswrd@10.9.4.50/c$" ~/.mnt/tom/
+mount_smbfs "//adm_masonf:$pswrd@chvwagaclp00/AOCustomReports" ~/.mnt/acl/mtu/
+mount_smbfs "//adm_masonf:$pswrd@chvwagaclp00/Yesterday_Daily_TotalConsumption" ~/.mnt/acl/yday/
+mount_smbfs "//adm_masonf:$pswrd@chvwagaclp00/Weekly_TotalConsumption" ~/.mnt/acl/week/
+mount_smbfs "//adm_masonf:$pswrd@chvwagaclp00/Monthly_TotalConsumption" ~/.mnt/acl/month/
+mount_smbfs "//adm_masonf:$pswrd@chvwagaclp00/DailyGasReads" ~/.mnt/acl/gasr/
+mount_smbfs "//adm_masonf:$pswrd@ccch-fl03/AllCityReadOnlyDirectory/SSRS/ScheduledReports/WestWaterEstimation/" ~/.mnt/acl/comp/
+mount_smbfs "//adm_masonf:$pswrd@ccch-fl03/AllCityDirectory/" ~/.mnt/all/
+mount_smbfs "//adm_masonf:$pswrd@ccch-fl03/AllCityReadOnlyDirectory/" ~/.mnt/all_ro/
+mount_smbfs "//adm_masonf:$pswrd@10.9.2.49/Ace/" ~/.mnt/ace/

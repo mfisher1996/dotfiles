@@ -74,6 +74,7 @@ plugins=(
     git
     zsh-autosuggestions
     zsh-syntax-highlighting
+    fast-syntax-highlighting
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -115,3 +116,6 @@ export PATH=$PATH:$HOME/go/bin
 
 alias jump=". ~/.local/scripts/jump.sh"
 alias sesh=". ~/.local/scripts/tmux-sessionizer"
+alias start=". ~/.local/scripts/startup"
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

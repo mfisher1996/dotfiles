@@ -113,6 +113,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ ! -r /home/masonf/.opam/opam-init/init.zsh ]] || source /home/masonf/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.tailwind
 
 alias jump=". ~/.local/scripts/jump.sh"
 alias sesh=". ~/.local/scripts/tmux-sessionizer"

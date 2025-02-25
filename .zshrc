@@ -70,7 +70,13 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+    fast-syntax-highlighting
+    zsh-autocomplete
+    git
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,5 +120,3 @@ export PATH=$PATH:$HOME/.tailwind
 alias jump=". ~/.local/scripts/jump.sh"
 alias sesh=". ~/.local/scripts/tmux-sessionizer"
 alias start=". ~/.local/scripts/startup"
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

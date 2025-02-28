@@ -118,5 +118,7 @@ export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.tailwind
 
 alias jump=". ~/.local/scripts/jump.sh"
-alias sesh=". ~/.local/scripts/tmux-sessionizer"
+alias sesh="~/.local/scripts/tmux-sessionizer"
 alias start=". ~/.local/scripts/startup"
+
+bindkey -v

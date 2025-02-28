@@ -1,5 +1,6 @@
 *
 !.gitignore
+!.gitconfig
 !.zshrc
 !.bashrc
 !.config
@@ -14,3 +15,5 @@
 !.local
 !scripts
 !tmux-sessionizer
+!mount
+!startup

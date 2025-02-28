@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+echo 'Good morning, Mason'
+
+images=($(curl -s http://10.9.4.46:2375/containers/json\?all\=true | jq -rc '.[] | {image:.Image, state:.State, name: .Names}'))
+
+echo 'Containers:'
+for image in "${images[@]}"; do
+    name=$(echo "$image" | jq -rc '.image')
+    state=$(echo "$image" | jq -rc '.state')
+    names=$(echo "$image" | jq -rc '.name[]')
+    output=$(curl -s --location "http://10.9.4.46:2375/containers/$names/logs?stdout=true&since=$(date -v-1d +%s)" --output -)
+    num_err=$(grep -o 'ERROR' --text <<< "$output" | wc -l)
+    num_dbg=$(grep -o 'DEBUG' --text <<< "$output" | wc -l)
+    num_inf=$(grep -o 'INFO' --text <<< "$output" | wc -l)
+    echo "\t$name ($state)\n\t\tErr:$num_err\n\t\tDbg:$num_dbg\n\t\tInf:$num_inf"
+done
+
+echo 'Would you like to mount directories? (y/n)'
+confirm=$(read)
+
+if [[ "$confirm" == 'y' ]]; then
+    echo 'Mounting directories...'
+    source ./mount
+fi

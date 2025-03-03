@@ -120,3 +120,7 @@ export PATH=$PATH:$HOME/.tailwind
 alias jump=". ~/.local/scripts/jump.sh"
 alias sesh=". ~/.local/scripts/tmux-sessionizer"
 alias start=". ~/.local/scripts/startup"
+alias sql=". ~/.local/scripts/sql"
+export PATH="$PATH:/opt/mssql-tools18/bin"
+
+bindkey -v

@@ -9,7 +9,7 @@ for image in "${images[@]}"; do
     name=$(echo "$image" | jq -rc '.image')
     state=$(echo "$image" | jq -rc '.state')
     names=$(echo "$image" | jq -rc '.name[]')
-    output=$(curl -s --location "http://10.9.4.46:2375/containers/$names/logs?stdout=true&since=$(date -v-1d +%s)" --output -)
+    output=$(curl -s --location "http://10.9.4.46:2375/containers/$names/logs?stdout=true&since=$(date --date="1 day ago" +%s)" --output -)
     num_err=$(grep -o 'ERROR' --text <<< "$output" | wc -l)
     num_dbg=$(grep -o 'DEBUG' --text <<< "$output" | wc -l)
     num_inf=$(grep -o 'INFO' --text <<< "$output" | wc -l)

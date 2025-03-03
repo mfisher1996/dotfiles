@@ -1,0 +1,57 @@
+#!/usr/bin/bash/
+
+# read variables
+programname=$0
+
+function usage {
+	echo "usage: $programname [-s server] [-u user] [-p password] <connection-name> <query>"
+	echo "  -s server     server to connect to"
+	echo "  -u user id    user id to connect with"
+	echo "  -p password   password to connect with"
+	exit 1
+}
+
+while getopts "s:u:p:" opt; do 
+    case $opt in
+        s)
+            server=$OPTARG
+            ;;
+        u)
+            user=$OPTARG
+            ;;
+        p)
+            password=$OPTARG
+            ;;
+    esac
+done
+
+connection=${@: -2:1}
+query=${@: -1}
+
+if [ ! -f "$HOME/.sql/$connection" ]; then
+    touch "$HOME/.sql/$connection"
+    echo "$server $user $password" >> "$HOME/.sql/$connection"
+else
+    server=$(awk '{print $1}' "$HOME/.sql/$connection")
+    user=$(awk '{print $2}' "$HOME/.sql/$connection")
+    password=$(awk '{print $3}' "$HOME/.sql/$connection")
+fi
+
+# check options 
+if [ -z $server ]; then
+    read -p "Server: " server
+fi
+
+if [ -z $user ]; then
+    read -p "User: " user
+fi
+
+if [ -z $password ]; then
+    read -s -p "Password: " password
+fi
+
+if [ -f $query ]; then 
+    sqlcmd -s"," -W -S $server -C -U $user -P $password -d $connection -i $query
+else
+    sqlcmd -s"," -W -S $server -C -U $user -P $password -d $connection -q "$query"
+fi

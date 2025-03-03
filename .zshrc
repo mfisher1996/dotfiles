@@ -10,6 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -75,6 +76,7 @@ plugins=(
     zsh-syntax-highlighting
     fast-syntax-highlighting
     zsh-autocomplete
+    zsh-vi-mode
     git
 )
 
@@ -122,5 +124,3 @@ alias sesh="~/.local/scripts/tmux-sessionizer"
 alias start=". ~/.local/scripts/startup"
 alias sql=". ~/.local/scripts/sql"
 export PATH="$PATH:/opt/mssql-tools18/bin"
-
-bindkey -v

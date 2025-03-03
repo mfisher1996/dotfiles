@@ -4,6 +4,8 @@
 !.zshrc
 !.bashrc
 !.config
+!.oh-my-zsh
+!oh-my-zsh.sh
 !nvim
 !*.lua
 !*.sh

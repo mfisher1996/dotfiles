@@ -65,6 +65,7 @@ vxkeymap('K', ":m '<-2<CR>gv-gv", opts)
 --end
 
 --lsp maps
+
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('MasonfGroup', {}),
     callback = function(e)

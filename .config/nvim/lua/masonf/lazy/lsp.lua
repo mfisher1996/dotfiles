@@ -17,6 +17,11 @@ return {
                     function(server_name)
                         if server_name == "tailwindcss" then
                             require("lspconfig")[server_name].setup {
+                                init_options = {
+                                    userLanguages = {
+                                        rust = "html",
+                                    },
+                                },
                                 filetypes = {
                                     "html",
                                     "javascript",
@@ -25,7 +30,6 @@ return {
                                     "typescriptreact",
                                     "rust",
                                 },
-                                root_dir = require("lspconfig").util.root_pattern("tailwind.config.js"),
                             }
                         else
                             require("lspconfig")[server_name].setup {}

@@ -11,6 +11,24 @@ return {
         },
         dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep", "nvim-tree/nvim-web-devicons" },
     },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
+        },
+    },
     "p00f/nvim-ts-rainbow",
     "lewis6991/gitsigns.nvim",
     "windwp/nvim-autopairs",
@@ -56,4 +74,15 @@ return {
         end,
     },
     "tpope/vim-fugitive",
+    {
+        "luckasRanarison/tailwind-tools.nvim",
+        name = "tailwind-tools",
+        build = ":UpdateRemotePlugins",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-telescope/telescope.nvim", -- optional
+            "neovim/nvim-lspconfig", -- optional
+        },
+        opts = {}
+    },
 }

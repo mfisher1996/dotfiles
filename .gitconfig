@@ -3,3 +3,7 @@
 # Please adapt and uncomment the following lines:
 	name = Mason Fisher
 	email = masonfisherb@gmail.com
+[safe]
+	directory = /mnt/tom/Repos/CC_Chameleon_Incomming
+	directory = /mnt/tom/Repos/CC_Chameleon_Outgoing
+	directory = /mnt/tom/Repos/Mason/DotNet/CC_ChameleonIntegration_svc

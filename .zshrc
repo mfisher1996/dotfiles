@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="afowler" # set by `omz`
 
 
 # Set list of themes to pick from when loading at random
@@ -76,7 +76,8 @@ plugins=(
     zsh-syntax-highlighting
     fast-syntax-highlighting
     zsh-autocomplete
-    zsh-vi-mode
+    autoupdate
+    tmux
     git
 )
 
@@ -111,23 +112,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-
-# opam configuration
+# Path export values
 [[ ! -r /home/masonf/.opam/opam-init/init.zsh ]] || source /home/masonf/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.tailwind
+export PATH="$PATH:/opt/mssql-tools18/bin"
+# both elixir and erlang are installed manually and will need to be manualy updated.
+# https://www.erlang-solutions.com/downloads-2/# -- jammy version 
+# https://elixir-lang.org/install.html#precompiled-package -- unzipped into ~/.elixir
+export PATH="$PATH:/home/masonf/.elixir/bin"
+
+export LD_LIBRARY_PATH="/home/masonf/Projects/It/cc_mas_db_svc/clidriver/lib"
+
+# opam configuration
 
 alias jump=". ~/.local/scripts/jump.sh"
 alias sesh="~/.local/scripts/tmux-sessionizer"
 alias start=". ~/.local/scripts/startup"
 alias sql=". ~/.local/scripts/sql"
-export PATH="$PATH:/opt/mssql-tools18/bin"
-
-export PATH="$PATH:/opt/mssql-tools18/bin"
-export LD_LIBRARY_PATH="/home/masonf/Projects/It/cc_mas_db_svc/clidriver/lib"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export GEMINI_API_KEY="AIzaSyCMxig0LgNOVZ72-3ydDgcx6U8cmKKQ53A"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export UPDATE_ZSH_DAYS=10

@@ -119,10 +119,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.tailwind
 export PATH="$PATH:/opt/mssql-tools18/bin"
-# both elixir and erlang are installed manually and will need to be manualy updated.
-# https://www.erlang-solutions.com/downloads-2/# -- jammy version 
-# https://elixir-lang.org/install.html#precompiled-package -- unzipped into ~/.elixir
-export PATH="$PATH:/home/masonf/.elixir/bin"
+export PATH="$PATH:/home/masonf/.asdf/"
 
 export LD_LIBRARY_PATH="/home/masonf/Projects/It/cc_mas_db_svc/clidriver/lib"
 
